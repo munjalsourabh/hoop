@@ -23,7 +23,6 @@ class TeamNames extends Component {
     fetch("https://sourabhmunjal2288.paiza-user.cloud:8080?apiPath=v1/2017/teams.json")
       .then(
         (result) => {
-          debugger;
           result.json().then((response) => {
             this.setState({
               isLoaded: true,
@@ -46,7 +45,6 @@ class TeamNames extends Component {
   render() {
     var listItem = this.state.items.map((team) => {
       return (
-        // const teamId = '/teamdetails/' + team.teamId;
         <Link to={'/teamdetails/' + team.teamId } key={team.teamId}>
           <ListItem primaryText={team.fullName} key={team.teamId} >
           </ListItem>
